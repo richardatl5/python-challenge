@@ -51,9 +51,9 @@ combined_data = list(zip(candidates, Vote_Counts))   # combines both lists using
 
 for name in combined_data:              #iterates through list 
    if max(Vote_Counts) == name[1]:      # finds the max votes associated with the candidate name
-        winner_list.append(name[0])
+        winner_list.append(name[0])     # adds the winners name in winner list 
 
-winner = winner_list[0]
+winner = winner_list[0]                 
     
 #prints results
 print("Election Results")
