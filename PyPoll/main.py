@@ -10,6 +10,7 @@ Li_Votes = 0
 OTooley_Votes = 0
 candidates = []
 Vote_Counts = []
+winner_list = []
 
 with open(PyPoll_Data, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter= ',')
@@ -41,20 +42,14 @@ Vote_Counts.append(Correy_Votes)
 Vote_Counts.append(Li_Votes)
 Vote_Counts.append(OTooley_Votes)
 
+combined_data = list(zip(candidates, Vote_Counts)) 
 
+for name in combined_data:
+   if max(Vote_Counts) == name[1]:
+        winner_list.append(name[0])
 
-def winner(candidates, n:
-    max = candidates[0]
-
-    for i in range(1,n):
-        if candidates[i] > max:
-            max = candidates[i]
-    return max
-
-    winner = candidates
-    n = len(candidates)
-    MostVotes = winner(candidates,n)
-
+winner = winner_list[0]
+    
 
 print("Election Results")
 print("-----------------------")
@@ -65,4 +60,5 @@ print(f"Correy: {Correy_Percentage}% ({Correy_Votes})")
 print(f"Li: {Li_Percentage}% ({Li_Votes})")
 print(f"O'Tooley: {OTooley_Percentage}% ({OTooley_Votes})")
 print("-----------------------")
-print("winner is ")
+print("Winner : " + str(winner))
+print("-----------------------")
