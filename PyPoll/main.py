@@ -62,3 +62,12 @@ print(f"O'Tooley: {OTooley_Percentage}% ({OTooley_Votes})")
 print("-----------------------")
 print("Winner : " + str(winner))
 print("-----------------------")
+
+with open('PyPoll-Analysis.txt', 'w') as text:
+    text.write("PyPoll Analysis" + "\n")
+    text.write("_________________________\n")
+    text.write(f"Khan: {Khan_Percentage}% ({Khan_Votes})\n")
+    text.write(f"Correy: {Correy_Percentage}% ({Correy_Votes})\n")
+    text.write(f"Li: {Li_Percentage}% ({Li_Votes})\n")
+    text.write(f"O'Tooley: {OTooley_Percentage}% ({OTooley_Votes})\n")
+    text.write(f" Winner : {winner} \n")
